@@ -2,7 +2,10 @@
 
 import math
 import numpy as np
+from pykeyboard import PyKeyboard
 
+
+k = PyKeyboard()
 NumOfEmptyCells = []
 
 
@@ -12,11 +15,19 @@ class AISolver(object):
         super(AISolver, self).__init__()
         self.arg = arg
 
-    def direction():
+    def direction(direction):
         UP = 0
         RIGHT = 1
         DOWN = 2
         LEFT = 3
+		if direction == 0:
+			k.tap_key('up')
+		if direction == 1:
+			k.tap_key('right')
+		if direction == 2:
+			k.tap_key('down')
+		if direction == 0:
+			k.tap_key('left')
 
     def minimax(node, depth, maximizingPlayer):
         if  depth == 0
