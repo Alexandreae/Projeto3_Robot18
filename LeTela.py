@@ -8,14 +8,14 @@ import numpy as np
 
 def TelaInput():
     # TIRA O PRINT
-    t.sleep(3)
+    t.sleep(1)
     im =PIL.ImageGrab.grab()
-    im.show()
+    #im.show()
 
-    im=Image.open("print.jpg")
+    #im=Image.open("print.jpg")
 
     # SEPARA O QUADRADO
-    im2 = im.crop((709, 467, 1194, 952))
+    im2 = im.crop((709, 445, 1194, 930))
     dx=121
     dy=121
 
@@ -65,8 +65,10 @@ def TelaInput():
     # LE POR PYTESSERACT
     for i in range(len(quadrados)):
         if q[i]==1:
-            q[i]=int(image_to_string(quadrados[i]))
-
+            q[i]=image_to_string(quadrados[i])
+    #print(q)
+    #plt.imshow(quadrados[8])
+    #plt.show()
     return q
 
 
@@ -80,3 +82,7 @@ def comparador(pixel1,pixel2):
         return True
     else:
         return False
+
+
+if __name__ == "__main__":
+    TelaInput()
